@@ -23,20 +23,29 @@ coding: dict = dict()   # key  -> a letter
 # STEP 0 - TODO
 ## defining our data structures
 class Node: # NOT given to students
-    # TODO
-    
-    def __init__(self):
-        return
+    left: any
+    right: any
+    letter: any
+    amt: any
+
+    def __init__(self, letter, left=None, right=None, amt=0):
+        self.left = left
+        self.right = right
+        self.letter = letter
+        self.amt = amt
 
 ## defining operations
 ### recursively traverses the huffman tree to record the codes
 def retrieve_codes(v: Node, path: str=''):
     global coding
-    if v.letter != None: # if 'TODO': # TODO
-        coding[v.letter] = None # TODO
+    if v.letter == None:
+        return coding
+    elif v.left == None and v.right == None:
+        coding.update(v.letter, path)
+        return coding
     else:
-        retrieve_codes(None, None) # TODO
-        retrieve_codes(None, None) # TODO
+        retrieve_codes(v.left, path + "0") # TODO
+        retrieve_codes(v.right, path + "1") # TODO
 
 # STEP 1
 ## counting the frequencies - TODO

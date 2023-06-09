@@ -39,7 +39,10 @@ def huffman(message:str) -> float:
 
     # STEP 1
     ## counting the frequencies
-
+    for letter in message:
+        if letter 
+        else:
+            
     # STEP 2
     ## initialize the nodes
 
